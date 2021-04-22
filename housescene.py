@@ -39,6 +39,9 @@ pygame.draw.polygon(screen, RED, [[300,170],[250,270],[350,270]]) # roof
 pygame.draw.rect(screen, WHITE, [290,320,20,50]) # door
 pygame.draw.circle(screen, BLACK, [295,345],5) # door knob
 pygame.draw.rect(screen, BLACK, [0,400,500,70]) # road
+pygame.draw.rect(screen, BROWN, [100,270,20,100]) # tree
+pygame.draw.circle(screen, DARK_GREEN, [110,270], 50) # leaves
+
 
 for i in range(17):
     pygame.draw.rect(screen, WHITE, [i*30,425,20,10]) # road lines
