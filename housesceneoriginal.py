@@ -36,20 +36,18 @@ for i in range(1,6): # cloud generation (proud of this one :)
 
 ticks = 0
 while True:
-    if ticks == 250:
-        ticks = 0
-    pygame.draw.rect(screen, [ticks,0,255], [0,0,500,500]) # sky
-    pygame.draw.circle(screen, [255,250-ticks,0], [ticks*2,(0.005*ticks*2)*(ticks*2-500)+312.5], 100) # sun
+    pygame.draw.rect(screen, BLUE, [0,0,500,500]) # sky
     pygame.draw.rect(screen, GREEN, [0,250,500,250]) # grass
 
     for i in range(60): # grass spots
         pygame.draw.circle(screen, DARK_GREEN, grass[i], 5)
 
-##    for i in range(18): # 0->9 loop
-##        j = pi * i * 10 / 180 # degrees to radians
-##        l = sin(j)*130 # trig is awesome
-##        w = cos(j)*130
-##        pygame.draw.lines(screen, [255,(255-ticks)%255,0], False, [[ticks%255, 0],[(l+ticks)%255,w]], 5)
+    pygame.draw.circle(screen, YELLOW, [0,0], 100) # sun
+    for i in range(10): # 0->9 loop
+        j = pi * i * 10 / 180 # degrees to radians
+        l = sin(j)*130 # trig is awesome
+        w = cos(j)*130
+        pygame.draw.lines(screen, YELLOW, False, [[0, 0],[l,w]], 5)
 
     pygame.draw.rect(screen, BROWN, [250,270,100,100]) # house
     pygame.draw.rect(screen, BROWN, [330,220,20,50]) # chimney
@@ -64,7 +62,7 @@ while True:
     pygame.draw.circle(screen, DARK_GREEN, [110,270], 50) # leaves
 
     for i in range(50):
-        pygame.draw.ellipse(screen, [250-ticks, 250-ticks, 250-ticks], [(clouds[i][0]+ticks)%600, clouds[i][1], clouds[i][2], clouds[i][3]])
+        pygame.draw.ellipse(screen, WHITE, [(clouds[i][0]+ticks)%600, clouds[i][1], clouds[i][2], clouds[i][3]])
 
     for i in range(17):
         pygame.draw.rect(screen, WHITE, [i*30,425,20,10]) # road lines
